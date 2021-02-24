@@ -48,47 +48,6 @@ a {
     text-decoration: none;
 }
 
-.container {
-    height: 100vh; /*viewport high, ocupa altura total do navegador */
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.experience-bar {
-    display: flex;
-    align-items: center;
-}
-
-.experience-bar span{
-    font-size: 1rem;
-}
-
-.experience-bar > div{ /* um nivel de div*/
-    flex: 1;
-    height: 4px;
-    border-radius: 4px;
-    background: var(--gray-line);
-    margin: 0 1.5rem;
-    position: relative;
-}
-
-.experience-bar > div > div{ /* um nivel de div*/
-    flex: 1;
-    height: 4px;
-    border-radius: 4px;
-    background: var(--green);
-}
-
-span.current-experience{
-    position: absolute;
-    top:12px;
-    transform: translateX(-50%); /* centraliza no eixo x baseado no tamanho*/
-}
-
 .avatar {
     height: 88px;
     width: 88px;
