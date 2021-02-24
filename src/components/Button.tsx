@@ -5,7 +5,6 @@ interface ButtonProps {
     children: string
 }
 
-
 export function Button(props: ButtonProps) {
     const [counter, setCounter] = useState(1);
 
