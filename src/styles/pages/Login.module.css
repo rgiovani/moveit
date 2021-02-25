@@ -1,0 +1,15 @@
+.containerAuth{
+    height: 100vh;
+    max-width: 992px;
+
+    margin: 0 auto;
+    padding: 15rem 15rem;
+
+    flex-direction: column;
+    display: flex;
+}
+
+.containerAuth section {
+    flex: 1;
+    align-content: center;    
+}

@@ -1,0 +1,79 @@
+.authBoxContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.authLoginBoxContainer {
+    padding: auto auto;
+    min-width: 450px;
+    
+    background: var(--white);
+    border-radius: 5px;
+
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.authLoginBoxContainer  > strong {
+    display: flex;
+    flex-direction: row;
+    
+    font-size: 1.5rem;
+    font-weight: 500px;
+
+    text-align: start;
+    min-width: 125px;
+
+    margin-top: 3%;
+}
+
+.authLoginBoxContainer  > input {
+    display: flex;
+    flex-direction: row;
+
+    font-size: 1.5rem;
+
+    border-bottom-color: var(--gray-line);
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 2px;
+
+    outline: none;
+    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.authLoginBoxContainer > button {
+    padding: 0.5rem 2rem;
+
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3%;
+    
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--blue);
+    color: var(--white);
+    
+    font-size: 1rem;
+    font-weight: 600; 
+
+    transition: filter 0.2s;
+}
+
+.authLoginBoxContainer button:hover{ /* Dessa forma o hover vale para os dois botoes (failed, succeded)*/
+    filter: brightness(0.9);
+}

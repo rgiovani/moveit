@@ -1,5 +1,5 @@
 .container {
-    height: 100vh; /*viewport high, ocupa altura total do navegador */
+    height: 100%; /*viewport high, ocupa altura total do navegador */
     max-width: 992px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
@@ -10,9 +10,10 @@
 
 .container section {
     flex: 1;
-
+    margin-top: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas com tamanho por igual */
     gap: 6.25rem;
     align-content: center;
 }
+
