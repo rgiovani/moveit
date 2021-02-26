@@ -16,8 +16,8 @@ export function ChallengeBox() {
     }
 
     function handleChallengeFailed() {
-        resetCountDown();
         resetChallenge();
+        resetCountDown();
     }
 
     return (
