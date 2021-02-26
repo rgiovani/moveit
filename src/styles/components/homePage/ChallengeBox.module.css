@@ -118,3 +118,15 @@
     filter: brightness(0.9);
 
 }
+
+@media screen and (max-width: 700px){
+    .challengeActive footer button{
+        margin-top: 20%;
+    }   
+    .challengeActive header{
+        margin-bottom: 5%;
+    }
+    .challengeBoxContainer{
+        margin-bottom:25%;
+    }    
+}
