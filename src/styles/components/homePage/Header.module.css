@@ -1,0 +1,12 @@
+.container {
+    top: 0;
+    width: 100%;
+    padding: 30px  ;
+    position: fixed;
+    
+    text-align: center;
+
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
+}
+
+

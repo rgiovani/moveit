@@ -14,6 +14,7 @@ import { useContext } from 'react';
 
 import { CountDownProvider } from '../context/CountdownContext';
 import { ChallengesProvider } from '../context/ChallengesContexts';
+import { Header } from '../components/home/Header';
 
 interface HomeProps {
   level: number;
@@ -21,7 +22,7 @@ interface HomeProps {
   challengesCompleted: number;
 }
 
-export default function Home(props) {
+export default function Home(props: HomeProps) {
   const { isLogged } = useContext(AuthContext);
   return (
     isLogged ? (
@@ -30,13 +31,14 @@ export default function Home(props) {
         currentExperience={props.currentExperience}
         challengesCompleted={props.challengesCompleted}
       >
+
+        <Header />
+
         <div className={styles.container}>
 
           <Head>
             <title>Inicio | move.it</title>
           </Head>
-
-          <ExperienceBar />
 
           <CountDownProvider>
             <section>

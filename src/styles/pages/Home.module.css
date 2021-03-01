@@ -2,6 +2,7 @@
     height: 100%; /*viewport high, ocupa altura total do navegador */
     max-width: 992px;
     margin: 0 auto;
+    margin-top: 40px;
     padding: 0.8rem 2rem;
 
     display: flex;

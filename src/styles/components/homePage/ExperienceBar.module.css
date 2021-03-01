@@ -2,13 +2,16 @@
 .experienceBar {
     display: flex;
     align-items: center;
-    
+    max-width: 75%;
+    margin-left: 13%;
 }
 
 .experienceBar span{
     font-size: 1rem;
     
 }
+
+
 
 .experienceBar > div{ /* um nivel de div*/
     flex: 1;
@@ -30,4 +33,11 @@ span.currentExperience{
     position: absolute;
     top:12px;
     transform: translateX(-50%); /* centraliza no eixo x baseado no tamanho*/
+}
+
+@media screen and (max-width: 700px){
+    .experienceBar {
+        margin-left: 9%;
+        max-width: 98%;
+    } 
 }
