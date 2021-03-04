@@ -2,7 +2,8 @@
     height: 100%; /*viewport high, ocupa altura total do navegador */
     max-width: 992px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 10px;
+
     padding: 0.8rem 2rem;
 
     display: flex;
@@ -12,7 +13,7 @@
 .container section {
     flex: 1;  
     display: grid;
-    margin-top: 4.5%;
+    margin-top: 2.5%;
     grid-template-columns: 1fr 1fr; /* Duas colunas com tamanho por igual */
     gap: 6.25rem;
     align-content: center;
@@ -20,15 +21,15 @@
 
 @media screen and (min-width: 1400px){
         .container section{
-            margin-top: 20%;   
+            margin-top: 10.5%;   
         }       
 }
 
 @media screen and (max-width: 700px){
     .container section{
-        display: flex;
-        margin-top: 20%; 
+        display: flex; 
         flex-direction: column;
+        
         gap: 2rem;
     }       
 }

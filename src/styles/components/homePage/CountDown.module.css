@@ -1,4 +1,10 @@
-.countDownContainer{
+.container{
+    display: flex;
+    flex-Direction: column;
+    align-Items: center;
+}
+
+.countDownContainer {
     display: flex;
     align-items: center;
     font-family: Rajdhani;
@@ -7,7 +13,7 @@
 
 .countDownContainer > div {
     flex: 1;
-
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -15,8 +21,8 @@
     background: var(--white);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
-    font-size: 8.5rem;
-    text-align: center;
+    font-size: 6.5rem;
+    text-align: center;    
 }
 
 .countDownContainer > div span {
@@ -38,11 +44,11 @@
 }
 /* --- */
 
-.countDownButton{
-    width: 100%;
-    height: 5rem;
+.countDownButton{ 
+    width: 62%;
+    height: 4rem;
 
-    margin-top: 2rem;
+    margin-top: 1rem;
     
     display:flex;
     align-items: center;
@@ -62,6 +68,7 @@
 }
 
 .countDownButton:not(:disabled):hover{
+    display: flex;
     background: var(--blue-dark);
 }
 
@@ -87,4 +94,34 @@
     color: var(--green);
     size: 20px;
     margin-left: 20px;
+}
+
+@media screen and (min-width: 1400px){
+    .countDownButton {  
+        width: 100%;
+        height: 5rem;
+        margin-top: 2rem;
+    }       
+
+    .countDownContainer > div { 
+        font-size: 11.2rem;  
+    }
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        display: flex;
+        flex-Direction: column;
+        align-Items: center;
+    }
+
+    .countDownButton{
+        width: 62%;
+        height: 4rem;
+        margin-top: 1rem;
+    } 
+    
+    .countDownContainer > div { 
+        font-size: 5.18rem;  
+    }
 }

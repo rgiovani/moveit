@@ -6,8 +6,9 @@ interface AuthProviderProps {
 
 interface AuthContextData {
     username;
-    userLogin: (user) => void;
     isLogged: boolean;
+    userLogin: (user) => void;
+    logout: (user) => void;
 }
 
 let isLogged = false;
@@ -22,12 +23,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
         isLogged = true;
     }
 
+    function logout() {
+        setUserName('');
+        isLogged = false;
+    }
+
     return (
         <AuthContext.Provider
             value={{
                 username,
+                isLogged,
                 userLogin,
-                isLogged
+                logout
             }}
         >
             {children}

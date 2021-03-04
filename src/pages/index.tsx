@@ -10,7 +10,7 @@ import { ChallengeBox } from '../components/home/ChallengeBox';
 import { ExperienceBar } from "../components/home/ExperienceBar";
 import Login from './login/';
 import { Profile } from "../components/home/Profile";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { CountDownProvider } from '../context/CountdownContext';
 import { ChallengesProvider } from '../context/ChallengesContexts';
@@ -24,6 +24,16 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const { isLogged } = useContext(AuthContext);
+  const [userScreenWidth, setUserScreenWidth] = useState(0);
+
+  useEffect(() => {
+    const handleDeviceWidth = () => {
+      setUserScreenWidth(window.screen.width);
+    }
+    window.addEventListener('resize', handleDeviceWidth);
+    return () => window.removeEventListener('select', handleDeviceWidth);
+  })
+
   return (
     isLogged ? (
       <ChallengesProvider
@@ -32,10 +42,13 @@ export default function Home(props: HomeProps) {
         challengesCompleted={props.challengesCompleted}
       >
 
-        <Header />
+        <ExperienceBar />
+        {userScreenWidth > 700 && (
+          <Header />
+        )}
+
 
         <div className={styles.container}>
-
           <Head>
             <title>Inicio | move.it</title>
           </Head>
