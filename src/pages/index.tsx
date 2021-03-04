@@ -31,7 +31,11 @@ export default function Home(props: HomeProps) {
       setUserScreenWidth(window.screen.width);
     }
     window.addEventListener('resize', handleDeviceWidth);
-    return () => window.removeEventListener('select', handleDeviceWidth);
+    window.addEventListener('pageshow', handleDeviceWidth);
+    return () => {
+      window.removeEventListener('resize', handleDeviceWidth)
+      window.removeEventListener('pageshow', handleDeviceWidth)
+    };
   })
 
   return (
