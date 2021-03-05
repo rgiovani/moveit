@@ -4,23 +4,18 @@ import { FiSettings, FiPlay } from "react-icons/fi";
 import { AiOutlineTrophy } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 
-import styles from '../../styles/components/homePage/Header.module.css';
 import { AuthContext } from '../../context/AuthContext';
+import styles from '../../styles/components/homePage/Header.module.css';
 
 const palette = {
     white: "#D1D3D4",
-    black: '#231F20',
+    black: "#231F20",
     buttonOnFocus: "#F2F3F5",
     buttonOutFocus: "#58595B"
 }
 
-
 export function Header() {
     const { logout } = useContext(AuthContext);
-
-    const [headerColor, setHeaderColor] = useState(palette.black);
-    const [configIconColor, setConfigIconColor] = useState(palette.white);
-    const [textColor, setTextColor] = useState(palette.white);
 
     const [playIconColor, setPlayIconColor] = useState(palette.buttonOutFocus);
     const [trophyIconColor, setTrophyIconColor] = useState(palette.buttonOutFocus);
@@ -35,25 +30,7 @@ export function Header() {
     const [maxWidthScreen, setMaxWidthScreen] = useState(1000);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 35 && window.screen.width < 700) {
-                setHeaderColor(palette.white);
-                setConfigIconColor(palette.black);
-                setTextColor(palette.black);
-            } else if (window.scrollY > 150 && window.screen.width > 700) {
-                setHeaderColor(palette.white);
-                setConfigIconColor(palette.black);
-                setTextColor(palette.black);
-            } else {
-                setHeaderColor(palette.black);
-                setConfigIconColor(palette.white);
-                setTextColor(palette.white);
-
-            }
-        }
         setMaxWidthScreen(window.screen.width);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     });
 
     useEffect(() => {
@@ -105,12 +82,7 @@ export function Header() {
 
     return (
 
-        <header className={styles.container} style={{
-            opacity: '90%',
-            background: headerColor,
-            color: textColor,
-
-        }}>
+        <header className={styles.container}>
 
             <img src='./favicon.png' />
 
@@ -148,7 +120,7 @@ export function Header() {
 
             <div className={styles.logoutButton}>
                 <button
-                    style={{ color: configIconColor, fontSize: '25px', marginRight: '5px' }}
+                    style={{ color: palette.buttonOutFocus, fontSize: '25px', marginRight: '5px' }}
                     onClick={logout}
                 >
                     <BiLogOut />

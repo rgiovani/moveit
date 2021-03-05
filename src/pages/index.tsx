@@ -15,6 +15,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CountDownProvider } from '../context/CountdownContext';
 import { ChallengesProvider } from '../context/ChallengesContexts';
 import { Header } from '../components/home/Header';
+import { HeaderMobile } from '../components/home/HeaderMobile';
 
 interface HomeProps {
   level: number;
@@ -25,6 +26,8 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
   const { isLogged } = useContext(AuthContext);
   const [userScreenWidth, setUserScreenWidth] = useState(0);
+
+  let top = 1;
 
   useEffect(() => {
     const handleDeviceWidth = () => {
@@ -38,41 +41,52 @@ export default function Home(props: HomeProps) {
     };
   })
 
+  function getMarginTop() {
+    top = (userScreenWidth < 700) ? 6 : 1;
+    return top;
+  }
+
   return (
     isLogged ? (
-      <ChallengesProvider
-        level={props.level}
-        currentExperience={props.currentExperience}
-        challengesCompleted={props.challengesCompleted}
-      >
+      <div style={{ marginTop: `${getMarginTop()}rem` }}>
+        <ChallengesProvider
+          level={props.level}
+          currentExperience={props.currentExperience}
+          challengesCompleted={props.challengesCompleted}
+        >
+          <ExperienceBar />
 
-        <ExperienceBar />
-        {userScreenWidth > 700 && (
-          <Header />
-        )}
+          {
+            (userScreenWidth > 700) ? (
+              <Header />
+            ) : (
+                <HeaderMobile />
+              )
+          }
 
+          <div className={styles.container}>
+            <Head>
+              <title>Inicio | move.it</title>
+            </Head>
 
-        <div className={styles.container}>
-          <Head>
-            <title>Inicio | move.it</title>
-          </Head>
+            <CountDownProvider>
+              <section>
+                <div>
+                  <Profile />
+                  <CompletedChallenges />
+                  <CountDown />
+                </div>
 
-          <CountDownProvider>
-            <section>
-              <div>
-                <Profile />
-                <CompletedChallenges />
-                <CountDown />
-              </div>
+                <div>
+                  <ChallengeBox />
+                </div>
+              </section>
+            </CountDownProvider>
 
-              <div>
-                <ChallengeBox />
-              </div>
-            </section>
-          </CountDownProvider>
+          </div>
+        </ChallengesProvider>
+      </div>
 
-        </div>
-      </ChallengesProvider>
     ) : (
         <Login />
       )

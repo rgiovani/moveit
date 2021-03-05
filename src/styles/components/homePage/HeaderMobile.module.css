@@ -1,0 +1,23 @@
+.container{
+    position:fixed;
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    top: 0;
+    width: 100%;
+    padding: 30px;
+    
+    background: #eaeaec;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.02);
+    opacity: 99%;
+    
+}
+.container img {
+    position: absolute;
+    width: 45px;
+    left: 10px;
+    top: 7px;
+}
