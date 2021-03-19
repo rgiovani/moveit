@@ -6,6 +6,7 @@ import { BiLogOut } from "react-icons/bi";
 
 import { AuthContext } from '../../context/AuthContext';
 import styles from '../../styles/components/homePage/Header.module.css';
+import { RankingContext } from '../../context/RankingContext';
 
 const palette = {
     white: "#D1D3D4",
@@ -16,6 +17,7 @@ const palette = {
 
 export function Header() {
     const { logout } = useContext(AuthContext);
+    const { showRanking } = useContext(RankingContext);
 
     const [playIconColor, setPlayIconColor] = useState(palette.buttonOutFocus);
     const [trophyIconColor, setTrophyIconColor] = useState(palette.buttonOutFocus);
@@ -28,6 +30,16 @@ export function Header() {
 
     const [maxButtonSize, setMaxButtonSize] = useState(45);
     const [maxWidthScreen, setMaxWidthScreen] = useState(1000);
+
+    function switchToHomePage() {
+        setButtonOnFocusId(0);
+        showRanking(false);
+    }
+
+    function switchToRankPage() {
+        setButtonOnFocusId(1);
+        showRanking(true);
+    }
 
     useEffect(() => {
         setMaxWidthScreen(window.screen.width);
@@ -87,7 +99,7 @@ export function Header() {
             <img src='./favicon.png' />
 
             <div className={styles.buttonsContainer}>
-                <button onClick={() => setButtonOnFocusId(0)}>
+                <button onClick={switchToHomePage}>
                     <FiPlay style={{
                         color: playIconColor,
                         fontSize: `${buttonPlaySize}px`,
@@ -98,7 +110,7 @@ export function Header() {
             </div>
 
             <div className={styles.buttonsContainer}>
-                <button onClick={() => setButtonOnFocusId(1)}>
+                <button onClick={switchToRankPage}>
                     <AiOutlineTrophy style={{
                         color: trophyIconColor,
                         fontSize: `${buttonTrophySize}px`,

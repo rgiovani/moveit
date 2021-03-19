@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    
+    width: 100%;
+    bottom: 0;
+
+    position: fixed;
+    align-items: center;
+    
+    background: #231F20;
+    opacity: 0.98;
+    border: 0;
+}
+
+
+.container > div {
+    flex-direction: row;
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    gap: 0;
+    justify-self: center;
+  
+}
+
+.container > div > button {
+    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    
+    border: 0;
+    outline: none;
+    
+    min-height: 80%;
+    min-width: 80%;
+    
+    padding: 15% ;
+    margin-bottom: 15px;
+  
+    font-size: 150%;
+
+    background: #231F20;
+    color: #646668;
+
+    align-items: center;
+}
+
+.container > div > button > span {
+    font-size: 12px;
+}

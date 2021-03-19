@@ -1,0 +1,281 @@
+.usersContainer {
+    display: flex; 
+    flex: 1;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.cardsContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 12rem;
+}
+
+.leftCard{
+    padding-top: 1rem;
+    padding-bottom: 1.1rem;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+    
+    background: var(--white);
+    
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+
+    max-height: 71.96px;
+    min-height: 71.96px;
+
+    max-width: 66.58px;
+    min-width: 66.58px;
+
+    font-size: 2rem;
+    text-align: center;
+
+    margin-right: 5px;
+}
+
+.rightCard{
+    display: flex;
+    flex: 1;
+
+    padding: 0.5rem;
+
+    background: var(--white);
+    align-items: center;
+
+    max-width: 908.17px;
+    min-width: 908.17px;
+
+    max-height: 71.96px;
+    min-height: 71.96px;
+    
+    flex-direction: row;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+}
+
+.title {
+    display: flex;
+    margin-left: 12rem;
+    margin-top: 2rem;
+    margin-bottom: 4%;
+}
+
+.descriptionsContainer{
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    margin-left: 12.3rem;
+}
+
+.descriptionsContainer > div:first-child{
+    display: flex;
+    margin-right: 25rem;
+}
+
+.descriptionsContainer > div:last-child{
+    display: flex;
+}
+
+.positionText {
+    margin-right: 5.6rem;
+}
+
+.challengeText {
+    margin-right: 6.8rem;
+}
+
+.userContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.userContainer > img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    flex-direction: row;
+}
+
+.userContainer > div {
+    margin-left: 1rem;
+    margin-right: 15rem;
+}
+
+.userContainer div strong {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.userContainer div p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.userContainer div p img {
+    margin-right: 0.5rem;
+}
+
+.status {
+    display: flex;
+}
+
+.statusXP {
+    display: flex;
+    align-items: center; 
+
+    margin-left: 50px;
+    max-width: 131.08;
+    min-width: 130.08;
+}
+
+.statusChallenge {
+    display: flex;
+    align-items: center; 
+
+    margin-left: 110px;
+    max-width: 205.83;
+    min-width: 205.83;
+}
+
+@media screen and (min-width: 1400px){
+    .title {
+        margin-left: 475px;
+        margin-bottom: 4%;
+    }
+
+    .descriptionsContainer{
+        display: flex;
+        font-size: 14px;
+        flex-direction: row;
+        margin-left: 475px;
+    }
+
+    .cardsContainer {
+        margin-left: 475px;
+    }
+    
+    .leftCard {
+        max-height: 71.96px;
+        min-height: 71.96px;
+
+        max-width: 66.58px;
+        min-width: 66.58px;
+    }
+
+    .rightCard {
+        max-width: 908.17px;
+        min-width: 908.17px;
+
+        max-height: 71.96px;
+        min-height: 71.96px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .title {
+        margin-left: 25px;
+        margin-bottom: 4%;
+    }
+
+    .descriptionsContainer{
+        display: flex;
+        font-size: 10px;
+        
+        flex-direction: row;
+        margin-left: 25px;
+        
+        align-items: center;
+    }
+
+    .descriptionsContainer > div:first-child{
+        display: flex;
+        margin-right: 5px;
+    }
+
+    .cardsContainer {
+        margin-left: 25px;
+        align-items: center;
+    }
+    
+    .leftCard {
+        max-height: 65px;
+        min-height: 65px;
+
+        max-width: 51.58px;
+        min-width: 51.58px;
+
+        align-items: center;
+    }
+
+    .rightCard {
+        max-width: 300px;
+        min-width: 300px;
+
+        max-height: 65px;
+        min-height: 65px;
+    }
+
+    .userContainer > img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        flex-direction: row;
+    }
+    
+   .userContainer div strong {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--title);
+    }
+
+    .userContainer div p {
+        font-size: 12px;
+        margin-top: 0.5rem;
+    }
+
+    .userContainer div p img {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+    
+    .userContainer > div {
+        margin-left: 1rem;
+        margin-right: 10px;
+        min-width: 100px;
+    }
+
+    .positionText {
+        margin-right: 4.3rem;
+    }
+
+    .challengeTextMobile {
+        margin-left: 5.5rem;
+        margin-right: 1.0rem;
+    }
+
+    .status{
+        font-size: 12px;
+        flex-direction: column;
+    }
+ 
+    .statusXP {
+        display: flex;
+        text-align: right;
+        margin-left: 20px;
+        max-width: 131.08;
+        min-width: 130.08;
+    }
+
+    .statusChallenge {
+        display: flex;
+        text-align: right;
+        margin-left: 20px;
+        max-width: 105.83;
+        min-width: 105.83;
+    }
+}

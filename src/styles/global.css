@@ -6,6 +6,7 @@
 
 :root{
     --white:#fff;
+    --black: #231F20;
     --background: #F2F3F5;
     --gray-line: #DCDDE0;
     --text: #666666;
@@ -31,8 +32,8 @@
 }
 
 body {
-background: var(--background);
-color: var(--text);
+    background: var(--background);
+    color: var(--text);
 }
 
 body, input, textarea, button {

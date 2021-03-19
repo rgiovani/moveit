@@ -1,76 +1,61 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/components/homePage/HeaderMobile.module.css';
+import { ExperienceBar } from './ExperienceBar';
 
-const palette = {
-    white: "#eaeaec",
-    black: "#231F20",
-    borderBottom: "#e6e6e6",
-    buttonOnFocus: "#F2F3F5",
-    buttonOutFocus: "#58595B",
+const header = {
+    speed: 8,
+    scrollYLimit: 1,
+    opacityInterval: 0.95,
+    palette: {
+        white: "#eaeaec",
+        black: "#231F20",
+    }
 }
 
-let countDownTimeOut: NodeJS.Timeout;
-
 export function HeaderMobile() {
-    const [redColor, setRedColor] = useState(240);
-    const [greenColor, setGreenColor] = useState(240);
-    const [blueColor, setBlueColor] = useState(240);
-    const [opacity, setOpacity] = useState(90);
-    const [textColor, setTextColor] = useState(palette.white);
+    const [textColor, setTextColor] = useState(header.palette.white);
+    const [opacityInterval, setOpacityInterval] = useState(0);
+    const [opacityTime, setOpacityTime] = useState(0);
 
     const [darkenHeader, setDarkenHeader] = useState(false);
 
-    const transitionHeaderColorSpeed = 8;
-
     useEffect(() => {
-        const handleScroll = () => {
-            (window.scrollY > 35) ? setDarkenHeader(true) : setDarkenHeader(false);;
+        function handleScroll() {
+            if (window.scrollY > header.scrollYLimit) {
+                setDarkenHeader(true)
+                setTextColor(header.palette.white)
+                setOpacityInterval(header.opacityInterval);
+                setOpacityTime(0.25);
+            } else {
+                setDarkenHeader(false)
+                setTextColor(header.palette.black)
+                setOpacityInterval(0);
+                setOpacityTime(0);
+            };
         }
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    useEffect(() => {
-        const setRgbaHeader = (red: number, green: number, blue: number, opacity: number) => {
-            if (red >= 0 && red < 240) {
-                setRedColor(red);
-                setGreenColor(green);
-                setBlueColor(blue);
-            }
-            setOpacity(opacity);
-        }
-
-        const changeHeaderOpacity = (opacityLimit: number, textColor: string) => {
-            const darkenOpacity = (opacity < opacityLimit && darkenHeader);
-            const lightenOpacity = (opacity > opacityLimit && !darkenHeader);
-
-            countDownTimeOut = setTimeout(() => {
-                if (darkenOpacity) {
-                    setRgbaHeader(redColor - 20, greenColor - 20, blueColor - 20, opacity + 1);
-                } else if (lightenOpacity) {
-                    setRgbaHeader(redColor + 20, greenColor + 20, blueColor + 20, opacity - 1);
-                } else {
-                    clearTimeout(countDownTimeOut);
-                }
-            }, transitionHeaderColorSpeed);
-
-            setTextColor(textColor);
-        }
-
-        (darkenHeader) ? changeHeaderOpacity(100, palette.white) : changeHeaderOpacity(90, palette.black);
-
-    }, [darkenHeader, opacity])
-
     return (
-
         <header className={styles.container} style={{
-            background: `rgba(${redColor}, ${greenColor}, ${blueColor}, ${opacity})`,
-            color: textColor
+            color: textColor,
+            opacity: opacityInterval,
+            transition: `opacity ${opacityTime}s linear`,
+            WebkitTransition: `opacity ${opacityTime}s linear`,
+            MozTransition: `opacity ${opacityTime}s linear`,
         }}>
-
-            <img src='./favicon.png' />
-
+            {
+                darkenHeader && (
+                    <div>
+                        <div>
+                            <ExperienceBar isMobile={true} />
+                        </div>
+                        <img src='./favicon.png' />
+                    </div>
+                )
+            }
         </header>
-
     )
 }

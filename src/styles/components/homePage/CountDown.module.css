@@ -116,12 +116,14 @@
     }
 
     .countDownButton{
-        width: 62%;
+        width: 70%;
         height: 4rem;
         margin-top: 1rem;
     } 
     
     .countDownContainer > div { 
-        font-size: 5.18rem;  
+        font-size: 7.08rem;  
+        width: 108px;
+        height: 90px;
     }
 }

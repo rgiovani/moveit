@@ -10,7 +10,6 @@
 }
 
 .experienceBar span{
-    
     font-size: 1rem;
 }
 
@@ -38,10 +37,10 @@ span.currentExperience{
 
 @media screen and (max-width: 700px){
     .experienceBar {
-        margin-left: 10%;
-        margin-right: 10%;
-
-        max-width: 98%;
-        margin-bottom: 0.8%;
+        display: flex;
+        flex: 1;
+        margin-left: 5%;
+        margin-right: 5%;
+        max-width: 98%; 
     } 
 }
