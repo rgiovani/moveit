@@ -124,19 +124,18 @@
     display: flex;
 }
 
-.statusXP {
+.statusChallenge {
     display: flex;
     align-items: center; 
-
-    margin-left: 50px;
+    margin-left: 120px;
     max-width: 131.08;
     min-width: 130.08;
 }
 
-.statusChallenge {
+.statusXP {
     display: flex;
     align-items: center; 
-
+    
     margin-left: 110px;
     max-width: 205.83;
     min-width: 205.83;

@@ -10,8 +10,10 @@ import { CompletedChallenges } from "../components/home/CompletedChallenges";
 import { CountDown } from "../components/home/CountDown";
 import { ChallengeBox } from '../components/home/ChallengeBox';
 import { ExperienceBar } from "../components/home/ExperienceBar";
-import Login from './login/';
 import { Profile } from "../components/home/Profile";
+
+import Login from './login/';
+import Ranking from './ranking/';
 
 import { CountDownProvider } from '../context/CountdownContext';
 import { ChallengesProvider } from '../context/ChallengesContexts';
@@ -19,7 +21,6 @@ import { Header } from '../components/home/Header';
 import { HeaderMobile } from '../components/home/HeaderMobile';
 import { FooterMobile } from '../components/home/FooterMobile';
 import { RankingContext } from '../context/RankingContext';
-import { Ranking } from './ranking';
 
 interface HomeProps {
   level: number;

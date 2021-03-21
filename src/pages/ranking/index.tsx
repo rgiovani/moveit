@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import styles from '../../styles/pages/Ranking.module.css';
 
-export function Ranking() {
+export default function Ranking() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export function Ranking() {
     })
 
     const users = [{
-        name: "Ronaldo Giovani"
+        name: "User"
     }]
 
     return (
@@ -22,7 +22,7 @@ export function Ranking() {
 
             <div className={styles.title}>
                 <h1 style={{ marginBottom: '10px' }}>
-                    Leaderboard
+                    Classificação
                 </h1>
             </div>
 
@@ -86,14 +86,14 @@ export function Ranking() {
                         </div>
 
                         <div className={styles.status}>
-                            <div className={styles.statusXP}>
+                            <div className={styles.statusChallenge} >
                                 <strong style={{ marginRight: '5px', textAlign: 'right' }}>
                                     0
                                 </strong>
                                 completados
                             </div>
 
-                            <div className={styles.statusChallenge} >
+                            <div className={styles.statusXP}>
                                 <div>
                                     <strong style={{ marginRight: '5px', textAlign: 'right' }}>
                                         0

@@ -37,7 +37,7 @@ function initIcons(IconID, color = '#646668') {
 
 export function FooterMobile() {
     const { logout } = useContext(AuthContext);
-    const { showRanking } = useContext(RankingContext);
+    const { showRanking, isRankingPageOnFocus } = useContext(RankingContext);
 
     const [buttonOnFocus, setButtonOnFocus] = useState(0);
     const [playButton, setPlayButton] = useState(initIcons(0));
@@ -58,6 +58,7 @@ export function FooterMobile() {
     }
 
     useEffect(() => {
+
         switch (buttonOnFocus) {
             case 0:
                 resetIcons();
@@ -74,6 +75,12 @@ export function FooterMobile() {
             default:
                 break;
         }
+
+        if (isRankingPageOnFocus) {
+            resetIcons();
+            setTrophyButton({ color: 'white', iconStyle: AiFillTrophy })
+            selectButton(1);
+        }
     }, [buttonOnFocus])
 
     function switchToHomePage() {
@@ -86,6 +93,10 @@ export function FooterMobile() {
         showRanking(true);
     }
 
+    function switchToSettingsPage() {
+        selectButton(2)
+        showRanking(false);
+    }
 
     return (
         <div className={styles.container}>
@@ -100,11 +111,11 @@ export function FooterMobile() {
                 <button onClick={switchToRankPage}>
                     <trophyButton.iconStyle style={{ color: trophyButton.color }} />
                     <span>
-                        Ranking
+                        Classificação
                     </span>
                 </button>
 
-                <button onClick={() => selectButton(2)} >
+                <button onClick={switchToSettingsPage} >
                     <settingsButton.iconStyle style={{ color: settingsButton.color }} />
                     <span>
                         Configurações
