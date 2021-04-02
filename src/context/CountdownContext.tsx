@@ -9,6 +9,7 @@ interface CountdownContextData {
     isActive: boolean,
     startCountDown: () => void,
     resetCountDown: () => void,
+    setIsActiveCondition: (active) => void,
 }
 
 interface CountdownProviderProps {
@@ -42,6 +43,10 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
         setHasFinished(false);
     }
 
+    function setIsActiveCondition(active) {
+        setIsActive(active);
+    }
+
     useEffect(() => {
         if (isActive && time > 0) {
             countDownTimeOut = setTimeout(() => {
@@ -61,7 +66,8 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
             hasFinished,
             isActive,
             startCountDown,
-            resetCountDown
+            resetCountDown,
+            setIsActiveCondition
         }}>
             {children}
         </CountdownContext.Provider>

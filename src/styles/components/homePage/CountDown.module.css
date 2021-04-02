@@ -22,11 +22,12 @@
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     font-size: 6.5rem;
-    text-align: center;    
+    text-align: center;  
 }
 
 .countDownContainer > div span {
     flex: 1;
+    min-width: 75.92px;
 }
 
 .countDownContainer > span {
@@ -45,10 +46,10 @@
 /* --- */
 
 .countDownButton{ 
-    width: 62%;
+    width: 82%;
     height: 4rem;
 
-    margin-top: 1rem;
+    margin-top: 2rem;
     
     display:flex;
     align-items: center;
@@ -100,11 +101,19 @@
     .countDownButton {  
         width: 100%;
         height: 5rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }       
 
     .countDownContainer > div { 
-        font-size: 11.2rem;  
+        font-size: 10.2rem;  
+    }
+
+    .countDownContainer span { 
+        font-size: 10.2rem;  
+    }
+
+    .countDownContainer > div span {
+        min-width: 107.17px;
     }
 }
 
@@ -119,11 +128,20 @@
         width: 70%;
         height: 4rem;
         margin-top: 1rem;
+        margin-bottom: 0.5rem;
     } 
     
     .countDownContainer > div { 
         font-size: 7.08rem;  
         width: 108px;
         height: 90px;
+    }
+
+    .countDownContainer span { 
+        font-size: 7.08rem;
+    }
+
+    .countDownContainer > div span {
+        min-width: 0px;
     }
 }

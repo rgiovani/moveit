@@ -10,6 +10,7 @@
     align-items: center;
     flex-direction: row;
     margin-left: 12rem;
+    margin-right: 12px;
 }
 
 .leftCard{
@@ -41,6 +42,7 @@
 
     padding: 0.5rem;
 
+    
     background: var(--white);
     align-items: center;
 
@@ -101,8 +103,8 @@
 }
 
 .userContainer > div {
-    margin-left: 1rem;
-    margin-right: 15rem;
+    margin-left: 1.3rem;
+    margin-right: 14.8rem;
 }
 
 .userContainer div strong {
@@ -127,7 +129,7 @@
 .statusChallenge {
     display: flex;
     align-items: center; 
-    margin-left: 120px;
+    margin-left: 130px;
     max-width: 131.08;
     min-width: 130.08;
 }
@@ -136,7 +138,7 @@
     display: flex;
     align-items: center; 
     
-    margin-left: 110px;
+    margin-left: 111px;
     max-width: 205.83;
     min-width: 205.83;
 }
@@ -169,13 +171,17 @@
     .rightCard {
         max-width: 908.17px;
         min-width: 908.17px;
-
         max-height: 71.96px;
         min-height: 71.96px;
     }
+
+
+    .statusXP {
+        margin-left: 109px;
+    }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
     .title {
         margin-left: 25px;
         margin-bottom: 4%;
@@ -197,25 +203,26 @@
     }
 
     .cardsContainer {
-        margin-left: 25px;
+        margin-left: 12px;
         align-items: center;
+       
+        max-width: 700px;
+        min-width: 280px;
     }
     
     .leftCard {
         max-height: 65px;
         min-height: 65px;
 
-        max-width: 51.58px;
-        min-width: 51.58px;
-
+        max-width: 58.58px;
         align-items: center;
     }
 
     .rightCard {
-        max-width: 300px;
-        min-width: 300px;
+        max-width: 700px;
+        min-width: 280px;
 
-        max-height: 65px;
+        max-height: 700px;
         min-height: 65px;
     }
 
@@ -249,7 +256,7 @@
     }
 
     .positionText {
-        margin-right: 4.3rem;
+        margin-right: 4.7rem;
     }
 
     .challengeTextMobile {

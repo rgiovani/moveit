@@ -9,6 +9,7 @@ import styles from '../../styles/components/homePage/FooterMobile.module.css';
 
 import { AuthContext } from "../../context/AuthContext";
 import { RankingContext } from "../../context/RankingContext";
+import { CountdownContext } from "../../context/CountdownContext";
 
 const outlineIcons = {
     play: FiPlay,
@@ -38,6 +39,7 @@ function initIcons(IconID, color = '#646668') {
 export function FooterMobile() {
     const { logout } = useContext(AuthContext);
     const { showRanking, isRankingPageOnFocus } = useContext(RankingContext);
+    const { isActive, setIsActiveCondition } = useContext(CountdownContext);
 
     const [buttonOnFocus, setButtonOnFocus] = useState(0);
     const [playButton, setPlayButton] = useState(initIcons(0));
